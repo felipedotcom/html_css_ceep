@@ -1,0 +1,35 @@
+body {
+   background-color: rgb(77, 77, 77);
+}
+
+
+.list-title {
+    background-color: rgb(128, 128, 128);
+    display: flex;
+    justify-content: center;
+}
+
+.todo-list,
+.title
+{
+    color: black;
+}
+
+.tasks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: whitesmoke;
+}
+
+.new-task-creator {
+    display: flex;
+    justify-content: center;
+    background-color: blue;
+}
+
+.delete-stuff {
+    display: flex;
+    justify-content: center;
+}
