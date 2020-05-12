@@ -3,66 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/form.css">
-    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/form.css" />
+    <link rel="stylesheet" href="assets/css/reset.css" />
 
     <title>CEEP</title>
   </head>
   <body>
-    <h1 class="title">CEEP</h1>
-
-    <div class="todo-list">
-      <div class="todo-header">
-        <h2 class="list-title">
-          O Que eu tenho que fazer hoje?
-        </h2>
-<!--         <p class="task-count">3 tarefas</p>
-        coloca ou não?
- -->      </div>
-
-      <div class="todo-body">
-        <div class="tasks">
-          <!-- task 1  -->
-          <div class="task">
-            <input type="checkbox" id="task-1" />
-            <label for="task-1">
-              <span class="custom-checkbox"></span>
-              Fazer musculação
-            </label>
-          </div>
-          <!-- task 2 -->
-          <div class="task">
-            <input type="checkbox" id="task-2" />
-            <label for="task-2">
-              <span class="custom-checkbox"></span>
-              Trocar lâmpada da cozinha
-            </label>
-          </div>
-          <!-- task 3 -->
-
-          <div class="task">
-            <input type="checkbox" id="task-3" />
-            <label for="task-3">
-              <span class="custom-checkbox"></span>
-              Dar ração para o cachorro
-            </label>
+    <div class="app">
+      <div class="todo-list">
+        <div class="todo-header">
+          <h2 class="list-title">
+            O que eu tenho que fazer hoje?
+          </h2>
+        </div>
+        <div class="todo-body">
+          <div class="tasks">
+            <!-- task 1  -->
+            <div class="task">
+              <input type="checkbox" id="task-1" />
+              <label for="task-1">
+                fazer exercicio
+              </label>
+            </div>
+            <!-- task 2  -->
+            <div class="task">
+              <input type="checkbox" id="task-2" />
+              <label for="task-2">
+                comparar cerveja
+              </label>
+              <!-- task 3  -->
+              <div class="task">
+                <input type="checkbox" id="task-3" />
+                <label for="task-3">
+                  ouvir podcast
+                </label>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div class="new-task-creator">
-          <form action="">
-            <input
-              type="text"
-              class="new list"
-              placeholder="new task name"
-              aria-label="new task name"
-            />
-            <button class="btn task" aria-label="create new task">+</button>
-          </form>
-        </div>
-        <div class="delete-stuff">
-          <button class="btn delete">Limpa tarefa feita</button>
-          <button class="btn delete">Deleta lista</button>
+        <div class="handle-action">
+          <div class="new-task-creator">
+            <form action="">
+              <input
+                type="text"
+                class="new list"
+                placeholder="new task name"
+                aria-label="new task name"
+              />
+              <button class="btn task" aria-label="create new task">+</button>
+            </form>
+          </div>
+          <div class="delete">
+            <button class="btn delete">Limpa tarefa feita</button>
+            <button class="btn delete">Deleta lista</button>
+          </div>
         </div>
       </div>
     </div>
