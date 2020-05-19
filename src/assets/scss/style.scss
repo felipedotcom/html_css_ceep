@@ -51,6 +51,9 @@ body {
 	margin-left: .25rem;
 }
 
+.form-button { 
+
+}
 .form-button:hover{
 	color: #F6F1D1;
 	background: rgba(#F6F1D1, .1);
@@ -129,28 +132,35 @@ body {
 	padding: 1rem 3rem;
 }
 
-[type="checkbox"] {
-	opacity: 0;
-	position: absolute;
-}
 
-[type="checkbox"]:checked + label .custom-checkbox {
-	background-color: #40798C;
-	border: #40798C;
-	box-shadow: 0 0 0px 2px whitesmoke;
-}
-
-[type="checkbox"]:checked + label .custom-checkbox {
-	opacity: 0.5;
-}
-
-.custom-checkbox {
-	display: inline-block;
-	width: 0.75rem;
-	background:#FFF;
-	height: 0.75rem;
+.check-button {
+	background-color: transparent;
+	border: 2px solid #F6F1D1;
+	outline: none;
+	border-radius: 2px;
 	cursor: pointer;
-	border: 2px solid currentcolor;
+}
+
+.task.done .check-button{ 
+	background-color: #F6F1D1;
+}
+
+.check-icon { 
+	display: block;
+	padding: 1px;
+	width: 10px;
+	height: 10px;
+	background-color: transparent;
 	border-radius: 50%;
 }
 
+.task.done .check-icon{
+	background-color: #0B2027;
+}
+
+.conteudo { 
+	margin: 0;
+}
+.task.done .conteudo{
+	text-decoration: line-through;
+}

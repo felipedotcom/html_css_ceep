@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/css/style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BioRhyme&amp;family=Space+Mono&amp;display=swap">
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <title>Ceep</title>
 </head>
 <body>
@@ -20,16 +23,16 @@
       </form>
 
       <ul class="list">
-        <li class="task">
-          Comprar um rato
-  
-          <input type="checkbox" id="task1">
-          <label for="task1">
-            <span class="custom-checkbox">
-            </span>
-          </label>
-          <button>
-            <i class="far fa-trash-alt"></i>
+        <li class="task done">
+          <p class="conteudo">Comprar um rato</p> 
+          <!-- pegar parentNode
+              colocar data attributes
+          -->
+          <button class="check-button" data>
+              <i class="check-icon"></i>
+          </button>
+          <button class="material-icons" data>
+              delete
           </button>
         </li>
   
@@ -39,13 +42,13 @@
           <label for="task2">
             <span class="custom-checkbox"></span>
           </label>
-          <button>
-            <i class="far fa-trash-alt"></i>
-          </button>
+          <button class="material-icons">
+            delete
+        </button>
         </li>
       </ul>
     </div>
   
-      
+  <script src="./componentes/addtask.js"></script>
 </body>
 </html>
