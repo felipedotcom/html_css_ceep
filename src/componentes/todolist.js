@@ -9,10 +9,11 @@ const criarTarefa = (e) => {
 
   console.log( valor )  //Preserv log aula2 video2
   
-  const tarefa = `<li class="task">
-                      <p class="conteudo">${valor}</p> 
-                  </li>` //Aula 3 video 1 alura mais 
-  lista.innerHTML = tarefa
+  const conteudo = `<p class="conteudo">${valor}</p>`
+  const tarefa = document.createElement('li')
+  tarefa.classList.add('task')
+
+  tarefa.innerHTML = conteudo //vou usar p conteudo que nao mude, muda inteiro e nao parcial
   lista.appendChild(tarefa)
  /*  const botaoCheck = document.createElement("button");
   botaoCheck.classList.add("check-button");
