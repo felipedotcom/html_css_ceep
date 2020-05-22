@@ -1,59 +1,57 @@
-const novaTarefa = document.querySelector(".form-button");
-const ul = document.querySelector(".list")
-const input = document.querySelector('.form-input')
+const novaTarefa = document.querySelector(".form-button"); //form
+const lista = document.querySelector(".list");
 
-const adicionaTarefar = (evento) => {
+const criarTarefa = (e) => {
+  console.log( e ) // Aula 2 video 3
+  e.preventDefault()
+  const input = document.querySelector(".form-input")
+  const valor = input.value
 
-	evento.preventDefault()
+  console.log( valor )  //Preserv log aula2 video2
+  
+  const tarefa = `<li class="task">
+                      <p class="conteudo">${valor}</p> 
+                  </li>` //Aula 3 video 1 alura mais 
+  lista.innerHTML = tarefa
+  lista.appendChild(tarefa)
+ /*  const botaoCheck = document.createElement("button");
+  botaoCheck.classList.add("check-button");
 
-  const lista = document.createElement("li");
-  lista.classList.add("task");
+  lista.appendChild(botaoCheck);
 
-	const paragrafo = document.createElement('p')
-	paragrafo.classList.add('conteudo')
-	paragrafo.textContent = input.value
+  const botaoDelete = document.createElement("button");
+  botaoDelete.classList.add("material-icons");
+  botaoDelete.innerText = "delete";
 
-	lista.appendChild(paragrafo)
+  lista.appendChild(botaoDelete);
 
-	const botaoCheck = document.createElement('button')
-	botaoCheck.classList.add('check-button')
+  ul.appendChild(lista);
 
-	lista.appendChild(botaoCheck)
-
-	const botaoDelete = document.createElement('button')
-	botaoDelete.classList.add('material-icons')
-	botaoDelete.innerText = 'delete'
-
-	lista.appendChild(botaoDelete)
-	
-
-	ul.appendChild(lista)
-
-	input.value = ""
-	
+  valor.value = ""; */
 };
 
-novaTarefa.addEventListener("click", adicionaTarefar)
 
-const deletarTarefa = (event) => { 
-	const tarefa = event.target
+novaTarefa.addEventListener("click", criarTarefa);
 
-	if(tarefa.classList[0] ==='material-icons'){ 
-		const tarefaList = tarefa.parentElement
-		tarefaList.remove()
-	}
-}
+/* const deletarTarefa = (event) => {
+  const tarefa = event.target;
+	console.log(tarefa.classList)
+  if (tarefa.classList.contains("material-icons")) {
+    const tarefaList = tarefa.parentElement;
+    tarefaList.remove();
+  }
+};
 
-ul.addEventListener('click', deletarTarefa)
+ul.addEventListener("click", deletarTarefa);
 
+const marcarTarefaCompletada = (event) => {
+  const tarefaCompleta = event.target;
 
-const marcarTarefaCompletada = (event) => { 
-	const tarefaCompleta = event.target
+  if (tarefaCompleta.contains("check-button")) {
+    const tarefaList = tarefaCompleta.parentElement;
+    tarefaList.classList.toggle("done");
+  }
+};
 
-	if(tarefaCompleta.classList[0] === 'check-button'){
-		const tarefaList = tarefaCompleta.parentElement
-		tarefaList.classList.toggle('done')
-	}
-}
-
-ul.addEventListener('click', marcarTarefaCompletada)
+ul.addEventListener("click", marcarTarefaCompletada); */
+ 
