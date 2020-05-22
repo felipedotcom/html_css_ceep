@@ -1,21 +1,20 @@
 (() => {
   const criarTarefa = (e) => {
-
     e.preventDefault();
-  
-    const novaTarefa = document.querySelector(".form-button"); //form
+
     const lista = document.querySelector(".list");
-  
+
     const input = document.querySelector(".form-input");
     const valor = input.value;
-  
+
     console.log(valor); //Preserv log aula2 video2
-  
+
     const conteudo = `<p class="conteudo">${valor}</p>`;
     const tarefa = document.createElement("li");
     tarefa.classList.add("task");
-  
+
     tarefa.innerHTML = conteudo; //vou usar p conteudo que nao mude, muda inteiro e nao parcial
+    tarefa.appendChild(botaoCheck());
     lista.appendChild(tarefa);
     /*  const botaoCheck = document.createElement("button");
     botaoCheck.classList.add("check-button");
@@ -32,10 +31,12 @@
   
     valor.value = ""; */
   };
-  
+
+  const novaTarefa = document.querySelector(".form-button"); //form
+
   novaTarefa.addEventListener("click", criarTarefa);
-  
-  /* const deletarTarefa = (event) => {
+
+  /*   const deletarTarefa = (event) => {
     const tarefa = event.target;
     console.log(tarefa.classList)
     if (tarefa.classList.contains("material-icons")) {
@@ -45,16 +46,21 @@
   };
   
   ul.addEventListener("click", deletarTarefa);
-  
-  const tarefaConcluida = (event) => {
-    const tarefaCompleta = event.target;
-  
-    if (tarefaCompleta.contains("check-button")) {
-      const tarefaList = tarefaCompleta.parentElement;
-      tarefaList.classList.toggle("done");
-    }
+   */
+  const botaoCheck = (e) => {
+    const botaoCheck = document.createElement("button");
+    botaoCheck.classList.add("check-button");
+    botaoCheck.innerText = "concluir";
+    botaoCheck.addEventListener('click', concluirTarefa)
+    return botaoCheck;
   };
-  
-  ul.addEventListener("click", marcarTarefaCompletada); */
-  
-})()
+
+  const concluirTarefa = (event) => {
+    const botaoCheck = event.target;
+
+    const tarefaCompleta = botaoCheck.parentElement;
+    tarefaCompleta.classList.toggle("done");
+  };
+
+  ul.addEventListener("click", concluirTarefa);
+})();
