@@ -14,7 +14,8 @@
     tarefa.classList.add("task");
 
     tarefa.innerHTML = conteudo; //vou usar p conteudo que nao mude, muda inteiro e nao parcial
-    tarefa.appendChild(botaoCheck());
+    tarefa.appendChild(BotaoConclui());
+    tarefa.appendChild(BotaoDeleta())
     lista.appendChild(tarefa);
     /*  const botaoCheck = document.createElement("button");
     botaoCheck.classList.add("check-button");
@@ -36,31 +37,34 @@
 
   novaTarefa.addEventListener("click", criarTarefa);
 
-  /*   const deletarTarefa = (event) => {
-    const tarefa = event.target;
-    console.log(tarefa.classList)
-    if (tarefa.classList.contains("material-icons")) {
-      const tarefaList = tarefa.parentElement;
-      tarefaList.remove();
-    }
-  };
-  
-  ul.addEventListener("click", deletarTarefa);
-   */
-  const botaoCheck = (e) => {
-    const botaoCheck = document.createElement("button");
-    botaoCheck.classList.add("check-button");
-    botaoCheck.innerText = "concluir";
-    botaoCheck.addEventListener('click', concluirTarefa)
-    return botaoCheck;
+  const BotaoConclui = (e) => {
+    const botaoConclui = document.createElement("button");
+    botaoConclui.classList.add("check-button");
+    botaoConclui.innerText = "concluir";
+    botaoConclui.addEventListener("click", concluirTarefa);
+    return botaoConclui;
   };
 
   const concluirTarefa = (event) => {
-    const botaoCheck = event.target;
+    const botaoConclui = event.target;
 
-    const tarefaCompleta = botaoCheck.parentElement;
+    const tarefaCompleta = botaoConclui.parentElement;
     tarefaCompleta.classList.toggle("done");
   };
 
-  ul.addEventListener("click", concluirTarefa);
+  const BotaoDeleta = (e) => {
+    const botaoDeleta = document.createElement("button");
+    botaoDeleta.classList.add("delete-button"); //criar essa classe
+
+    botaoDeleta.innerText = "deletar";
+    botaoDeleta.addEventListener("click", deletarTarefa);
+    return botaoDeleta;
+  };
+
+  const deletarTarefa = (event) => {
+    const botaoDeleta = event.target;
+
+    const tarefaCompleta = botaoDeleta.parentElement;
+    tarefaCompleta.remove();
+  };
 })();
